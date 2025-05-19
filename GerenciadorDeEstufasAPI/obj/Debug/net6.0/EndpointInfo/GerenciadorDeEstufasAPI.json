@@ -1,0 +1,143 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "GerenciadorDeEstufasAPI",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Estufa": {
+      "post": {
+        "tags": [
+          "Estufa"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstufaDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstufaDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstufaDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Estufa"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/Estufa/{id}": {
+      "put": {
+        "tags": [
+          "Estufa"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstufaDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstufaDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/EstufaDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AmostraDTO": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroFileira": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroBadeja": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "posicao": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EstufaDTO": {
+        "type": "object",
+        "properties": {
+          "numeroIdentificacao": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroAmostrasPorFileira": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numeroBandejas": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amostrasDTO": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AmostraDTO"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
