@@ -5,14 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4CAC094C-11E2-4FCE-9558-E09D4DA9D77C}|GerenciadorDeEstufasAPI.csproj|c:\\users\\felipe\\desktop\\estudosisolados\\gerenciadordeestufasapi\\gerenciadordeestufasapi\\services\\estufaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4CAC094C-11E2-4FCE-9558-E09D4DA9D77C}|GerenciadorDeEstufasAPI.csproj|solutionrelative:services\\estufaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4CAC094C-11E2-4FCE-9558-E09D4DA9D77C}|GerenciadorDeEstufasAPI.csproj|c:\\users\\felipe\\desktop\\estudosisolados\\gerenciadordeestufasapi\\gerenciadordeestufasapi\\controllers\\estufacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4CAC094C-11E2-4FCE-9558-E09D4DA9D77C}|GerenciadorDeEstufasAPI.csproj|solutionrelative:controllers\\estufacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4CAC094C-11E2-4FCE-9558-E09D4DA9D77C}|GerenciadorDeEstufasAPI.csproj|c:\\users\\felipe\\desktop\\estudosisolados\\gerenciadordeestufasapi\\gerenciadordeestufasapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4CAC094C-11E2-4FCE-9558-E09D4DA9D77C}|GerenciadorDeEstufasAPI.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,35 +24,9 @@
               "RelativeDocumentMoniker": "Services\\EstufaService.cs",
               "ToolTip": "C:\\Users\\Felipe\\Desktop\\EstudosIsolados\\GerenciadorDeEstufasAPI\\GerenciadorDeEstufasAPI\\Services\\EstufaService.cs",
               "RelativeToolTip": "Services\\EstufaService.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAIwDIAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAQwE4AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T03:25:40.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Felipe\\Desktop\\EstudosIsolados\\GerenciadorDeEstufasAPI\\GerenciadorDeEstufasAPI\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Felipe\\Desktop\\EstudosIsolados\\GerenciadorDeEstufasAPI\\GerenciadorDeEstufasAPI\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T03:23:02.611Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "EstufaController.cs",
-              "DocumentMoniker": "C:\\Users\\Felipe\\Desktop\\EstudosIsolados\\GerenciadorDeEstufasAPI\\GerenciadorDeEstufasAPI\\Controllers\\EstufaController.cs",
-              "RelativeDocumentMoniker": "Controllers\\EstufaController.cs",
-              "ToolTip": "C:\\Users\\Felipe\\Desktop\\EstudosIsolados\\GerenciadorDeEstufasAPI\\GerenciadorDeEstufasAPI\\Controllers\\EstufaController.cs",
-              "RelativeToolTip": "Controllers\\EstufaController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAwwC4AAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T03:22:23.996Z",
+              "WhenOpened": "2025-05-20T02:42:43.637Z",
               "EditorCaption": ""
             }
           ]

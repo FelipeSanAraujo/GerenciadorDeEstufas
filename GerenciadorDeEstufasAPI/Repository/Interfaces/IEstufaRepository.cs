@@ -8,6 +8,7 @@ namespace GerenciadorDeEstufasAPI.Repository.Interfaces
         Task AtualizarAsync(Estufa dto);
         Task<IEnumerable<Estufa>> ConsultarAsync();
         Task<Estufa> ConsultarComIdAsync(Guid id);
-        Task<Estufa> ConsultarComIdAsyncEAmostras(Guid id);
+        Task<Estufa> ConsultarComAmostrasPorIdentificacaoAsync(int id);
+        Task<Estufa> ConsultarComIdentificacaoAsync(int id);
     }
 }

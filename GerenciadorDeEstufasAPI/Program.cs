@@ -18,7 +18,7 @@ builder.Services.AddDbContext<GerenciadorContext>(opts =>
 builder.Services.AddScoped<IAmostraRepository, AmostraRepository>();
 builder.Services.AddScoped<IEstufaRepository, EstufaRepository>();
 
-builder.Services.AddTransient<IEstufaService, EstufaService>();
+builder.Services.AddScoped<IEstufaService, EstufaService>();
 
 var app = builder.Build();
 

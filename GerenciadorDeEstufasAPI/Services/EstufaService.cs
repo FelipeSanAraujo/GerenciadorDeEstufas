@@ -1,4 +1,5 @@
 ﻿using GerenciadorDeEstufas.Estufa;
+using GerenciadorDeEstufas.Estufa.ValueObjects;
 using GerenciadorDeEstufasAPI.DTOs;
 using GerenciadorDeEstufasAPI.Repository.Interfaces;
 using GerenciadorDeEstufasAPI.Services.Interfaces;
@@ -46,6 +47,7 @@ namespace GerenciadorDeEstufasAPI.Services
             var lista = await _estufaRepository.ConsultarAsync();
             var map = lista.Select(x => new EstufaDTO()
             {
+                Id = x.Id,
                 NumeroIdentificacao = x.NumeroDeIdentificacao,
                 NumeroAmostrasPorFileira = x.NumeroDeAmostrasPorFileira,
                 NumeroBandejas = x.NumeroDeBandejas
@@ -63,6 +65,46 @@ namespace GerenciadorDeEstufasAPI.Services
                 NumeroAmostrasPorFileira = estufa.NumeroDeAmostrasPorFileira,
                 NumeroBandejas = estufa.NumeroDeBandejas
             };
+        }
+
+        public async Task<bool> EncherEstufa(SequenciaDTO sequencia, int numeroEstufa)
+        {
+            try
+            {
+                var estufa = await _estufaRepository.ConsultarComIdentificacaoAsync(numeroEstufa);
+
+                var sequenciaVO = new SequenciaVO(sequencia.AmostraInicial, sequencia.AmostraFinal);
+                estufa.EncherEstufa(sequenciaVO);
+
+                await _amostraRepository.CriarComListaAsync(estufa.Amostras);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        public async Task<EstufaDTO> ConsultarComIdEAmostrasAsync(int numeroIdentificacao)
+        {
+            var estufa = await _estufaRepository
+                .ConsultarComAmostrasPorIdentificacaoAsync(numeroIdentificacao);
+
+            var dto = new EstufaDTO
+            {
+                NumeroIdentificacao = estufa.NumeroDeIdentificacao,
+                NumeroAmostrasPorFileira = estufa.NumeroDeAmostrasPorFileira,
+                NumeroBandejas = estufa.NumeroDeBandejas,
+                AmostrasDTO = estufa.Amostras.Select(a => new AmostraDTO
+                {
+                    IdAmostra = a.IdAmostra,
+                    NumeroBadeja = a.NumeroBadeja,
+                    NumeroFileira = a.NumeroFileira,
+                    Posicao = a.Posicao
+                })
+            };
+
+            return dto;
         }
     }
 }

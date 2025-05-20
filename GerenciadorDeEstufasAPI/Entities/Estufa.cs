@@ -26,7 +26,7 @@ namespace GerenciadorDeEstufas.Estufa
         public int NumeroDeBandejas { get; set; }
         public List<Amostra>? Amostras { get; set; } = new List<Amostra>();
 
-        private PosicaoAmostraVO posicao = new PosicaoAmostraVO();
+        private PosicaoAmostraVO posicao = new();
         public void EncherEstufa(SequenciaVO sequencia)
         {
             for (int numeroAmostra = sequencia.AmostraInicial

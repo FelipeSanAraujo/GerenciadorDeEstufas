@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GerenciadorDeEstufasAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6705a47d80c4e4b2ad7fe7577db94725b7140d21")]
 [assembly: System.Reflection.AssemblyProductAttribute("GerenciadorDeEstufasAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GerenciadorDeEstufasAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

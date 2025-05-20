@@ -77,4 +77,5 @@ C:\Users\Felipe\Desktop\EstudosIsolados\GerenciadorDeEstufasAPI\GerenciadorDeEst
 C:\Users\Felipe\Desktop\EstudosIsolados\GerenciadorDeEstufasAPI\GerenciadorDeEstufasAPI\obj\Debug\net6.0\GerenciadorDeEstufasAPI.pdb
 C:\Users\Felipe\Desktop\EstudosIsolados\GerenciadorDeEstufasAPI\GerenciadorDeEstufasAPI\obj\Debug\net6.0\GerenciadorDeEstufasAPI.genruntimeconfig.cache
 C:\Users\Felipe\Desktop\EstudosIsolados\GerenciadorDeEstufasAPI\GerenciadorDeEstufasAPI\obj\Debug\net6.0\ref\GerenciadorDeEstufasAPI.dll
+C:\Users\Felipe\Desktop\EstudosIsolados\GerenciadorDeEstufasAPI\GerenciadorDeEstufasAPI\obj\Debug\net6.0\GerenciadorDeEstufasAPI.sourcelink.json
 C:\Users\Felipe\Desktop\EstudosIsolados\GerenciadorDeEstufasAPI\GerenciadorDeEstufasAPI\obj\Debug\net6.0\staticwebassets.upToDateCheck.txt

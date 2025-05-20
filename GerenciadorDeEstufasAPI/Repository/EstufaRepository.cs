@@ -37,9 +37,15 @@ namespace GerenciadorDeEstufasAPI.Repository
                 .FirstOrDefaultAsync();
         }
         
-        public async Task<Estufa> ConsultarComIdAsyncEAmostras(Guid id)
+        public async Task<Estufa> ConsultarComIdentificacaoAsync(int numero)
         {
-            return await _context.Estufas.Where(e => e.Id.Equals(id))
+            return await _context.Estufas
+                .FirstOrDefaultAsync(e => e.NumeroDeIdentificacao == numero);
+        }
+
+        public async Task<Estufa> ConsultarComAmostrasPorIdentificacaoAsync(int numeroIdentificacao)
+        {
+            return await _context.Estufas.Where(e => e.NumeroDeIdentificacao.Equals(numeroIdentificacao))
                 .Include(e => e.Amostras).FirstOrDefaultAsync();
         }
     }

@@ -2,9 +2,10 @@
 {
     public class EstufaDTO
     {
+        public Guid Id { get; set; }
         public int NumeroIdentificacao { get; set; }
         public int NumeroAmostrasPorFileira { get; set; }
         public int NumeroBandejas { get; set; }
-        public List<AmostraDTO>? AmostrasDTO { get; set; } = new List<AmostraDTO>();
+        public IEnumerable<AmostraDTO>? AmostrasDTO { get; set; } = new List<AmostraDTO>();
     }
 }

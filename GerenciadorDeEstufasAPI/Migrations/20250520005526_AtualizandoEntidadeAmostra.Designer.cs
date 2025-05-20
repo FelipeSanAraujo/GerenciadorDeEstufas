@@ -4,6 +4,7 @@ using GerenciadorDeEstufasAPI.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GerenciadorDeEstufasAPI.Migrations
 {
     [DbContext(typeof(GerenciadorContext))]
-    partial class GerenciadorContextModelSnapshot : ModelSnapshot
+    [Migration("20250520005526_AtualizandoEntidadeAmostra")]
+    partial class AtualizandoEntidadeAmostra
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,9 +50,6 @@ namespace GerenciadorDeEstufasAPI.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("EstufaId");
-
-                    b.HasIndex("IdAmostra")
-                        .IsUnique();
 
                     b.ToTable("Amostras");
                 });

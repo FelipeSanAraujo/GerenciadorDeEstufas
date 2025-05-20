@@ -46,6 +46,47 @@
         }
       }
     },
+    "/api/Estufa/encher": {
+      "post": {
+        "tags": [
+          "Estufa"
+        ],
+        "parameters": [
+          {
+            "name": "numeroEstufa",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SequenciaDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SequenciaDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SequenciaDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/Estufa/{id}": {
       "put": {
         "tags": [
@@ -87,6 +128,28 @@
           }
         }
       }
+    },
+    "/api/Estufa/com-amostras": {
+      "get": {
+        "tags": [
+          "Estufa"
+        ],
+        "parameters": [
+          {
+            "name": "numeroIdentificacao",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -94,7 +157,7 @@
       "AmostraDTO": {
         "type": "object",
         "properties": {
-          "id": {
+          "idAmostra": {
             "type": "integer",
             "format": "int32"
           },
@@ -116,6 +179,10 @@
       "EstufaDTO": {
         "type": "object",
         "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
           "numeroIdentificacao": {
             "type": "integer",
             "format": "int32"
@@ -134,6 +201,20 @@
               "$ref": "#/components/schemas/AmostraDTO"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "SequenciaDTO": {
+        "type": "object",
+        "properties": {
+          "amostraInicial": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amostraFinal": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false

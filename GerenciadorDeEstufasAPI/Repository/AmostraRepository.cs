@@ -19,9 +19,9 @@ namespace GerenciadorDeEstufasAPI.Repository
             return await _context.Amostras.ToListAsync();
         }
 
-        public async Task<Amostra> ConsultarPorIdAsync(int id)
+        public async Task<Amostra> ConsultarPorIdAsync(int idAmostra)
         {
-            return await _context.Amostras.FirstOrDefaultAsync(a => a.Id == id);
+            return await _context.Amostras.FirstOrDefaultAsync(a => a.IdAmostra == idAmostra);
         }
 
         public async Task CriarAsync(Amostra amostra)
@@ -32,7 +32,7 @@ namespace GerenciadorDeEstufasAPI.Repository
 
         public async Task CriarComListaAsync(List<Amostra> amostras)
         {
-            _context.AddRange(amostras);
+            _context.Amostras.AddRange(amostras);
             await _context.SaveChangesAsync();
         }
     }
