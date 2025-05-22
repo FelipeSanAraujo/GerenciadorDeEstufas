@@ -1,6 +1,6 @@
 ﻿namespace GerenciadorDeEstufasAPI.DTOs
 {
-    public class AmostraDTO
+    public struct AmostraDTO
     {
         public int IdAmostra { get; set; }
         public int NumeroFileira { get; set; }

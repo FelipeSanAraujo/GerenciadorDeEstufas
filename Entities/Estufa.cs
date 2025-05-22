@@ -9,9 +9,9 @@ namespace GerenciadorDeEstufas.Estufa
         public Estufa()
         {
         }
-        public Estufa(int numeroDeIdentificacao
-            , int numeroDeAmostrasPorFileira
-            , int numeroDeBandejas)
+
+        public Estufa(int numeroDeIdentificacao, int numeroDeAmostrasPorFileira,
+            int numeroDeBandejas)
         {
             Id = Guid.NewGuid();
             NumeroDeIdentificacao = numeroDeIdentificacao;
@@ -29,15 +29,10 @@ namespace GerenciadorDeEstufas.Estufa
         private PosicaoAmostraVO posicao = new();
         public void EncherEstufa(SequenciaVO sequencia)
         {
-            for (int numeroAmostra = sequencia.AmostraInicial
-                ; numeroAmostra <= sequencia.AmostraFinal
-                ; numeroAmostra++)
+            for (int i = sequencia.AmostraInicial; i <= sequencia.AmostraFinal; i++)
             {
-                var amostra = new Amostra(numeroAmostra
-                    , posicao.Fileira
-                    , posicao.Bandeja
-                    , posicao.Posicao
-                    , this.Id);
+                var amostra = new Amostra(i, posicao.Fileira, posicao.Bandeja, 
+                    posicao.Posicao, this.Id);
 
                 Amostras.Add(amostra);
                 posicao.Posicao++;
@@ -67,10 +62,9 @@ namespace GerenciadorDeEstufas.Estufa
             }
         }
 
-        public Amostra EncontrarAmostra(int id)
+        public Amostra? EncontrarAmostra(int id)
         {
-            return Amostras.Count != 0 ? Amostras
-                .FirstOrDefault(a => a.Id == id) : throw new Exception("Sem amostras na estufa.");
+            return Amostras.FirstOrDefault(a => a.Id == id);
         }
     }
 }

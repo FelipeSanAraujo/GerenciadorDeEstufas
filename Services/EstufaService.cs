@@ -67,22 +67,15 @@ namespace GerenciadorDeEstufasAPI.Services
             };
         }
 
-        public async Task<bool> EncherEstufa(SequenciaDTO sequencia, int numeroEstufa)
+        public async Task EncherEstufa(SequenciaDTO sequencia, int numeroEstufa)
         {
-            try
-            {
-                var estufa = await _estufaRepository.ConsultarComIdentificacaoAsync(numeroEstufa);
+             var estufa = await _estufaRepository.ConsultarComIdentificacaoAsync(numeroEstufa);
 
-                var sequenciaVO = new SequenciaVO(sequencia.AmostraInicial, sequencia.AmostraFinal);
-                estufa.EncherEstufa(sequenciaVO);
+             var sequenciaVO = new SequenciaVO(sequencia.AmostraInicial, sequencia.AmostraFinal);
+             estufa.EncherEstufa(sequenciaVO);
 
-                await _amostraRepository.CriarComListaAsync(estufa.Amostras);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+             await _amostraRepository.CriarComListaAsync(estufa.Amostras);
+            
         }
 
         public async Task<EstufaDTO> ConsultarComIdEAmostrasAsync(int numeroIdentificacao)
@@ -95,7 +88,7 @@ namespace GerenciadorDeEstufasAPI.Services
                 NumeroIdentificacao = estufa.NumeroDeIdentificacao,
                 NumeroAmostrasPorFileira = estufa.NumeroDeAmostrasPorFileira,
                 NumeroBandejas = estufa.NumeroDeBandejas,
-                AmostrasDTO = estufa.Amostras.Select(a => new AmostraDTO
+                Amostras = estufa.Amostras.Select(a => new AmostraDTO
                 {
                     IdAmostra = a.IdAmostra,
                     NumeroBadeja = a.NumeroBadeja,

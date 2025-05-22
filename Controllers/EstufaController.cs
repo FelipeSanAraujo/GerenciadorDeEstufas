@@ -2,11 +2,10 @@
 using GerenciadorDeEstufasAPI.DTOs;
 using GerenciadorDeEstufasAPI.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace GerenciadorDeEstufasAPI.Controllers
 {
-    [Route("api/[Controller]")]
+    [Route("api/estufa")]
     [ApiController]
     public class EstufaController : ControllerBase
     {
@@ -37,7 +36,8 @@ namespace GerenciadorDeEstufasAPI.Controllers
         {
             try
             {
-                return Ok(await _service.EncherEstufa(sequencia, numeroEstufa));
+                await _service.EncherEstufa(sequencia, numeroEstufa);
+                return Ok();
             }
             catch (Exception e)
             {
@@ -51,7 +51,7 @@ namespace GerenciadorDeEstufasAPI.Controllers
             try
             {
                 await _service.AtualizarAsync(estufaDTO, id);
-                return NoContent();
+                return Ok();
             }
             catch (Exception e)
             {
