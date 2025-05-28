@@ -10,5 +10,6 @@ namespace GerenciadorDeEstufasAPI.Services.Interfaces
         Task<EstufaDTO> ConsultarComIdAsync(Guid id);
         Task<EstufaDTO> ConsultarComIdEAmostrasAsync(int numeroIdentificacao);
         Task EncherEstufa(SequenciaDTO sequencia, int numeroEstufa);
+        Task EncherEstufa(List<SequenciaDTO> sequencia, int numeroEstufa);
     }
 }

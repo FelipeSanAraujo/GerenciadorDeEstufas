@@ -45,6 +45,21 @@ namespace GerenciadorDeEstufasAPI.Controllers
             }
         }
 
+        [Route("encher-com-pulo")]
+        [HttpPost]
+        public async Task<IActionResult> EncherEstufa(List<SequenciaDTO> sequencia, int numeroEstufa)
+        {
+            try
+            {
+                await _service.EncherEstufa(sequencia, numeroEstufa);
+                return Ok();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(500, e.Message);
+            }
+        }
+
         [HttpPut("{id:guid}")]
         public async Task<IActionResult> Atualizar(EstufaDTO estufaDTO, Guid id)
         {

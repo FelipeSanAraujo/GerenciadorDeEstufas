@@ -71,11 +71,31 @@ namespace GerenciadorDeEstufasAPI.Services
         {
              var estufa = await _estufaRepository.ConsultarComIdentificacaoAsync(numeroEstufa);
 
+            if (estufa is null)
+                throw new Exception("Estufa não encontrada.");
+
              var sequenciaVO = new SequenciaVO(sequencia.AmostraInicial, sequencia.AmostraFinal);
              estufa.EncherEstufa(sequenciaVO);
 
              await _amostraRepository.CriarComListaAsync(estufa.Amostras);
-            
+        }
+
+        public async Task EncherEstufa(List<SequenciaDTO> sequencia, int numeroEstufa)
+        {
+            var estufa = await _estufaRepository.ConsultarComIdentificacaoAsync(numeroEstufa);
+            var sequenciasMap = new List<SequenciaVO>();
+
+            if (estufa is null)
+                throw new Exception("Estufa não encontrada.");
+
+            foreach (var item in sequencia)
+            {
+                var sequenciaVo = new SequenciaVO(item.AmostraInicial, item.AmostraFinal);
+                sequenciasMap.Add(sequenciaVo);
+            }
+
+            estufa.EncherEstufa(sequenciasMap);
+            await _amostraRepository.CriarComListaAsync(estufa.Amostras);
         }
 
         public async Task<EstufaDTO> ConsultarComIdEAmostrasAsync(int numeroIdentificacao)
